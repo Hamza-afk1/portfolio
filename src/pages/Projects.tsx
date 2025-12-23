@@ -16,7 +16,7 @@ const Projects = () => {
             description: "Freelance Project: A comprehensive Stock Management Web Application managing products, entries/exits, and users with full authentication and CRUD capabilities.",
             tags: ["Freelance", "Laravel", "MySQL", "Web App"],
             image: electroBabaImg,
-            demoLink: "https://electrobaba.sitewebk.com",
+            demoLink: "#",
             codeLink: "#"
         },
         {
