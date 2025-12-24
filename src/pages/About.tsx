@@ -62,7 +62,7 @@ const About = () => {
                         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 hover:shadow-[0_0_30px_rgba(var(--primary),0.3)]">
                             <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-overlay" />
                             <img
-                                src="/assets/pic.webp"
+                                src="/assets/pic2.webp"
                                 alt="Hamza Dghoughi"
                                 className="w-full h-full object-cover"
                             />
