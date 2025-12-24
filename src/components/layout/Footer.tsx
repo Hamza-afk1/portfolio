@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
     return (
-        <footer className="w-full py-8 text-center text-muted-foreground border-t border-border/40 bg-background/50 backdrop-blur-sm">
+        <footer className="w-full py-12 text-center text-muted-foreground border-t border-border bg-background">
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-sm">
                     © {new Date().getFullYear()} Hamza. All rights reserved. Built with React & Tailwind.

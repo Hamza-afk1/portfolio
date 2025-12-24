@@ -8,71 +8,73 @@ html {
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    /* Deep space black/blue */
-    --foreground: 0 0% 98%;
+    --background: 30 33% 99%;
+    /* Crisper Ivory/Cream */
+    --foreground: 0 0% 0%;
+    /* Pure Black for maximum clarity */
 
-    --card: 240 10% 7%;
-    /* Slightly lighter than background */
-    --card-foreground: 0 0% 98%;
+    --card: 30 33% 97%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 240 10% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 263 70% 50%;
-    /* Deep Violet Neon */
-    --primary-foreground: 210 40% 98%;
+    --primary: 20 30% 20%;
+    /* Richer Darker Brown */
+    --primary-foreground: 30 33% 99%;
 
-    --secondary: 240 5% 20%;
-    /* Muted dark gray/blue */
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 30 15% 92%;
+    /* Clean Sand */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 30 10% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 190 90% 50%;
-    /* Cyan Neon for antigravity effects */
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 35 40% 55%;
+    /* Professional Tan */
+    --accent-foreground: 30 33% 99%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 263 70% 50%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 20 30% 20%;
 
-    --radius: 0.75rem;
-    /* More rounded premium feel */
+    --radius: 1.25rem;
+    /* Soft Apple corners */
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 20 25% 5%;
+    /* Deepest Espresso */
+    --foreground: 30 33% 99%;
 
-    --card: 240 10% 7%;
-    --card-foreground: 0 0% 98%;
+    --card: 20 25% 8%;
+    --card-foreground: 30 33% 99%;
 
-    --popover: 240 10% 7%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 20 25% 5%;
+    --popover-foreground: 30 33% 99%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 30 33% 95%;
+    /* Clean primary for dark mode */
+    --primary-foreground: 20 25% 5%;
 
-    --secondary: 240 5% 20%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 20 15% 12%;
+    --secondary-foreground: 30 33% 99%;
 
-    --muted: 240 5% 20%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 20 15% 12%;
+    --muted-foreground: 30 10% 70%;
 
-    --accent: 190 90% 50%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 35 40% 45%;
+    --accent-foreground: 30 33% 99%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5% 20%;
-    --input: 240 5% 20%;
-    --ring: 263 70% 50%;
+    --border: 20 15% 15%;
+    --input: 20 15% 15%;
+    --ring: 30 33% 95%;
   }
 }
 
@@ -83,6 +85,7 @@ html {
 
   body {
     @apply bg-background text-foreground tracking-tight scroll-smooth antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", "Inter", sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -96,6 +99,6 @@ html {
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/50 rounded-full hover:bg-primary/80 transition-colors;
+    @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
   }
 }

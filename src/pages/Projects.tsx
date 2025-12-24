@@ -48,7 +48,7 @@ const Projects = () => {
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-4xl md:text-5xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-white"
+                className="text-4xl md:text-5xl font-bold mb-12 text-center text-primary"
             >
                 Featured Projects
             </motion.h1>

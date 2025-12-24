@@ -10,11 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
-        <SectionWrapper id="home">
+        <SectionWrapper id="home" disableAnimation={true}>
           <Home />
         </SectionWrapper>
 
-        <SectionWrapper id="about">
+        <SectionWrapper id="about" disableAnimation={true}>
           <About />
         </SectionWrapper>
 

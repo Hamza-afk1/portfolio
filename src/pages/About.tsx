@@ -4,9 +4,9 @@ import { Code, Database, Globe, Award, BookOpen, Terminal } from "lucide-react";
 
 // Skills mapped from CV
 const skills = [
-    { name: "Frontend", icon: <Globe className="w-8 h-8 text-cyan-400" />, desc: "React, JavaScript, Bootstrap, HTML/CSS" },
-    { name: "Backend", icon: <Database className="w-8 h-8 text-purple-500" />, desc: "Laravel, PHP, Python, MySQL" },
-    { name: "Tools & Design", icon: <Terminal className="w-8 h-8 text-pink-500" />, desc: "Git, VS Code, Figma (Basic)" },
+    { name: "Frontend", icon: <Globe className="w-8 h-8 text-primary" />, desc: "React, JavaScript, Bootstrap, HTML/CSS" },
+    { name: "Backend", icon: <Database className="w-8 h-8 text-primary" />, desc: "Laravel, PHP, Python, MySQL" },
+    { name: "Tools & Design", icon: <Terminal className="w-8 h-8 text-primary" />, desc: "Git, VS Code, Figma (Basic)" },
 ];
 
 const education = [
@@ -40,18 +40,18 @@ const About = () => {
     return (
         <div className="container mx-auto px-6 py-20 min-h-screen">
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="max-w-5xl mx-auto"
             >
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-primary">
                     À Propos De Moi
                 </h1>
 
                 {/* Bio & Image */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-                    <div className="prose prose-invert max-w-none">
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                    <div className="prose max-w-none">
+                        <p className="text-xl text-foreground font-medium leading-relaxed">
                             Développeur web et passionné de digital, je crée des sites web sur mesure, des landing pages performantes, des menus digitaux et des solutions adaptées aux besoins modernes des entreprises.
                             <br /><br />
                             Curieux et créatif, je m’intéresse à tout ce qui touche au digital, avec une passion particulière pour la photographie, qui enrichit mon sens du détail et de l’esthétique dans chacun de mes projets.
@@ -59,16 +59,13 @@ const About = () => {
                     </div>
 
                     <div className="relative flex justify-center md:justify-end">
-                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-white/10 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 hover:shadow-[0_0_30px_rgba(var(--primary),0.3)]">
-                            <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-overlay" />
+                        <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-border">
                             <img
                                 src="/assets/pic2.webp"
                                 alt="Hamza Dghoughi"
                                 className="w-full h-full object-cover"
                             />
                         </div>
-                        {/* Decorative elements */}
-                        <div className="absolute -z-10 top-[-20px] right-[-20px] w-64 h-64 md:w-80 md:h-80 border-2 border-primary/20 rounded-2xl" />
                     </div>
                 </div>
 
@@ -83,13 +80,13 @@ const About = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-colors hover:shadow-[0_0_20px_rgba(var(--primary),0.2)] group"
+                            className="p-8 rounded-2xl bg-white border border-border group"
                         >
-                            <div className="mb-4 p-3 bg-secondary/30 w-fit rounded-lg group-hover:scale-110 transition-transform">
+                            <div className="mb-6 p-4 bg-secondary w-fit rounded-xl">
                                 {skill.icon}
                             </div>
                             <h3 className="text-xl font-bold mb-2">{skill.name}</h3>
-                            <p className="text-muted-foreground text-sm">{skill.desc}</p>
+                            <p className="text-foreground/70 text-sm font-medium">{skill.desc}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -116,10 +113,10 @@ const About = () => {
                 </h2>
                 <div className="flex flex-wrap gap-4">
                     {certifications.map((cert, index) => (
-                        <div key={index} className="flex items-center gap-2 px-6 py-3 bg-secondary/20 border border-white/10 rounded-full">
+                        <div key={index} className="flex items-center gap-2 px-6 py-3 bg-white border border-border rounded-full shadow-sm">
                             <Award className="w-5 h-5 text-accent" />
-                            <span className="font-medium">{cert.name}</span>
-                            <span className="text-sm text-muted-foreground">- {cert.provider}</span>
+                            <span className="font-bold text-foreground">{cert.name}</span>
+                            <span className="text-sm text-foreground/60">- {cert.provider}</span>
                         </div>
                     ))}
                 </div>

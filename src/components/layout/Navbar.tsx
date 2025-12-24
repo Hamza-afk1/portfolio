@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Rocket, Code2, User, Mail, Home } from "lucide-react";
+import { Menu, X, Code2, User, Mail, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/dg-logo.png";
 
 
 const Navbar = () => {
@@ -50,18 +51,19 @@ const Navbar = () => {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
                 scrolled
-                    ? "bg-background/80 backdrop-blur-md border-border/50 py-4"
+                    ? "bg-background border-border py-4 shadow-sm"
                     : "bg-transparent py-6"
             )}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <button onClick={() => scrollToSection("home")} className="flex items-center gap-2 group">
-                    <div className="p-2 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <Rocket className="w-6 h-6 text-primary group-hover:rotate-12 transition-transform duration-300" />
+                    <div className="relative w-10 h-10 overflow-hidden rounded-lg">
+                        <img
+                            src={logo}
+                            alt="DG Logo"
+                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                        />
                     </div>
-                    <span className="text-xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50 group-hover:to-primary transition-all duration-300">
-                        PORTFOLIO
-                    </span>
                 </button>
 
                 {/* Desktop Nav */}
@@ -83,14 +85,14 @@ const Navbar = () => {
                             )} />
                         </button>
                     ))}
-                    <button onClick={() => scrollToSection("#contact")} className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)]">
+                    <button onClick={() => scrollToSection("#contact")} className="px-6 py-2 bg-primary text-primary-foreground rounded-full text-sm font-semibold hover:bg-primary/90 transition-all shadow-md hover:shadow-lg">
                         Hire Me
                     </button>
                 </div>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden p-2 text-foreground hover:bg-white/10 rounded-md"
+                    className="md:hidden p-2 text-foreground hover:bg-secondary rounded-md"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X /> : <Menu />}
@@ -104,7 +106,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/50 overflow-hidden"
+                        className="md:hidden bg-background/95 backdrop-blur-2xl border-b border-border overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {navLinks.map((link) => (
@@ -112,8 +114,8 @@ const Navbar = () => {
                                     key={link.path}
                                     onClick={() => scrollToSection(link.path)}
                                     className={cn(
-                                        "flex items-center gap-3 text-lg font-medium p-2 rounded-md hover:bg-white/5 transition-colors",
-                                        activeSection === link.path.replace("#", "") ? "text-primary bg-primary/10" : "text-muted-foreground"
+                                        "flex items-center gap-3 text-lg font-medium p-3 rounded-xl transition-colors",
+                                        activeSection === link.path.replace("#", "") ? "text-primary bg-primary/10" : "text-muted-foreground hover:bg-secondary"
                                     )}
                                 >
                                     {link.icon}
@@ -122,7 +124,7 @@ const Navbar = () => {
                             ))}
                             <button
                                 onClick={() => scrollToSection("#contact")}
-                                className="mt-4 w-full py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-lg hover:opacity-90 transition-opacity"
+                                className="mt-4 w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/90 transition-all shadow-md"
                             >
                                 Hire Me
                             </button>
